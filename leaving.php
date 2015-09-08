@@ -47,7 +47,23 @@
                     </div>
                 </div>
                         <button type="submit" class="btn btn-default">提交得出结果：</button>
+                <?php
+                include_once 'mysql.class.php';
+                $city=$_GET['city'];
+                $st=$_GET['ST'];
+                $et=$_GET['ET'];
+                $result=mysqli_query($conn,"select totalP*percentP/(singleP*usedTime)AS plan from test.project where area='{$city}' and startTime<'{$st}' AND endTime>'{$et}'");
+                $array=$result;
+                foreach ($array as &$value)
+                {
+                    $sum+=$value;
+                }
+                echo $sum;
+                $colum =mysqli_fetch_array($result);
+                while($row=mysqli_fetch_array($result)) {
 
+                }
+                ?>
         </form>
 
 </body>
