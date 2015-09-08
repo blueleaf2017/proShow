@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>项目录入</title>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="laydate/laydate.js"></script>
+</head>
+<body>
+        <a href="detailDisplay.php">项目详情页</a>
+        <H2 align="center">项目详情录入</H2>
+        <form class="form-horizontal"  method="post" action="postProject.php">
+            <div class="form-group">
+                <label for="proName" class="col-sm-2 control-label">项目名称</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="proName" id="proName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="totalP" class="col-sm-2 control-label">预计峰值总量</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="totalP" id="totalP">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="percentP" class="col-sm-2 control-label">浮动百分比</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="percentP" id="percentP">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="singleP" class="col-sm-2 control-label">单机小时产量</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="singleP" id="singleP">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usedTime" class="col-sm-2 control-label">每天执行时间</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="usedTime" id="usedTime">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="stage" class="col-sm-2 control-label">项目状态</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="stage" id="stage">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="startTime" class="col-sm-2 control-label">项目起始时间</label>
+                <div class="col-sm-10">
+                    <input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})" name="startTime" id="startTime">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="endTime" class="col-sm-2 control-label">预计结束时间</label>
+                <div class="col-sm-10">
+                    <input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})" name="endTime" id="endTime">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="area" class="col-sm-2 control-label">区域</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="area" id="area">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">提交</button>
+                </div>
+            </div>
+        </form>
+</body>
+</html>
