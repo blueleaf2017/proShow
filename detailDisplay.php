@@ -63,18 +63,11 @@
     <input type="text" name="city" id="city"/>
     <label for="machineT">总设备数</label>
     <input type="number" name="machineT" id="machineT"/>
-    <div class="form-group">
-        <label for="ST" class="col-sm-2 control-label">开始时间</label>
-        <div class="col-sm-10">
-            <input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})" name="ST" id="ST">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="ET" class="col-sm-2 control-label">结束时间</label>
-        <div class="col-sm-10">
-            <input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})" name="ET" id="ET">
-        </div>
-        <button type="submit" class="btn btn-default">提交得出结果：</button>
+    <label for="ST" >开始时间</label>
+    <input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})" name="ST" id="ST">
+    <label for="ET" >结束时间</label>
+    <input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})" name="ET" id="ET">
+    <button type="submit" class="btn btn-default">提交得出结果：</button>
 </form>
 </body>
 </html>
