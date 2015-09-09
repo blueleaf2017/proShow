@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
     <script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+    <script src="laydate/laydate.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#table").dataTable();
@@ -35,6 +36,7 @@
     header("content-type:text/html; charset=utf-8");
     $result=mysqli_query($conn,"SELECT id,proName,totalP*percentP/(singleP*usedTime)AS plan,totalP,stage,startTime,endTime,area FROM test.project");
     while($row=mysqli_fetch_array($result)){
+        print_r(floor($row['plan']));
         ?>
         <tbody>
         <tr>
@@ -55,29 +57,22 @@
     ?>
 </table>
 <a href="writePro.html">新增项目</a>
-<form class="form-horizontal" role="form" method="post">
+<form class="form-horizontal" role="form" method="post" action="leaving.php">
 
+    <label for="city">区域选择</label>
+    <input type="text" name="city" id="city"/>
+    <label for="machineT">总设备数</label>
+    <input type="number" name="machineT" id="machineT"/>
     <div class="form-group">
-        <label for="city">区域选择</label>
-        <label>
-            <select class="form-control" name="city">
-                <option>潮州</option>
-                <option>北京</option>
-                <option>广州</option>
-            </select>
-        </label>
-
-        <div class="form-group">
-            <label for="ST" class="col-sm-2 control-label">开始时间</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" name="ST" id="ST">
-            </div>
+        <label for="ST" class="col-sm-2 control-label">开始时间</label>
+        <div class="col-sm-10">
+            <input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})" name="ST" id="ST">
         </div>
-        <div class="form-group">
-            <label for="ET" class="col-sm-2 control-label">结束时间</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" name="ET" id="ET">
-            </div>
+    </div>
+    <div class="form-group">
+        <label for="ET" class="col-sm-2 control-label">结束时间</label>
+        <div class="col-sm-10">
+            <input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})" name="ET" id="ET">
         </div>
         <button type="submit" class="btn btn-default">提交得出结果：</button>
 </form>
