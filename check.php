@@ -15,7 +15,7 @@ elseif($password == "")
 }
 else
 {
-    $sql=mysqli_query($conn,"select  from test.useradmin where username='{$username}' and password='{$password}'");
+    $sql=mysqli_query($conn,"select * from test.useradmin where username='{$username}' and password='{$password}'");
     $colum =mysqli_fetch_array($sql);
     if(($colum['username'] == $username) && ($colum['password'] == $password))
     {

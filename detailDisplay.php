@@ -36,7 +36,6 @@
     header("content-type:text/html; charset=utf-8");
     $result=mysqli_query($conn,"SELECT id,proName,totalP*percentP/(singleP*usedTime)AS plan,totalP,stage,startTime,endTime,area FROM test.project");
     while($row=mysqli_fetch_array($result)){
-        print_r(floor($row['plan']));
         ?>
         <tbody>
         <tr>

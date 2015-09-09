@@ -39,7 +39,6 @@ while($row=mysqli_fetch_array($result)){
 echo "</table>";
 mysqli_close($conn);
 ?>
-<a href="leaving.php" target="_blank">剩余设备计算查询</a>
 
 </body>
 </html>
